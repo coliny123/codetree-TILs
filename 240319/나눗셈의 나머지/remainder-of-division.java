@@ -6,15 +6,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int[]arr = new int[10]; // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        int[]arr = new int[10];
         int result = 0;
 
-        for(;;){
+        while(a>1){
             arr[a%b] += 1;
             a = a/b;
-            if(a<=1){
-                break;
-            }
         }
 
         for(int i=0; i<arr.length; i++){
