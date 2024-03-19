@@ -26,7 +26,7 @@ public class Main {
                     }
                 }
                 if(idx == -1){
-                    idx = 0;
+                    System.out.println(0);
                 }else{
                     System.out.println(idx);
                 }
