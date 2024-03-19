@@ -7,9 +7,9 @@ public class Main {
         int n = sc.nextInt();
         int q = sc.nextInt();
 
-        int[]arr = new int[n+1];    // 0, 0, 0, 0
+        int[]arr = new int[n+1];    // 0, 0, 0, 0, 0
         for(int i=1; i<=n; i++){
-            arr[i] = sc.nextInt();  // 0, 1, 8, 5
+            arr[i] = sc.nextInt();  // 0, 1, 8, 5, 5
         }
         for(int j=0; j<q; j++){
             int c = sc.nextInt();
@@ -35,6 +35,7 @@ public class Main {
                 for(int z=a; z<=b; z++){
                     System.out.printf("%d ", arr[z]);
                 }
+                System.out.println();
             }
         }
 
