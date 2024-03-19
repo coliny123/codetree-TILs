@@ -20,7 +20,7 @@ public class Main {
                 int idx = -1;
                 for(int k=1; k<arr.length; k++){
                     if(arr[k]==a){
-                        if(idx != 1){
+                        if(idx == -1){
                             idx = k;
                         }
                     }
