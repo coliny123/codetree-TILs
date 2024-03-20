@@ -6,24 +6,30 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[]arr = new int[n];
+        int max1 = 0, max2 = 0;
 
         for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
 
-        int min = arr[0];
-        int temp = 0;
+        if(arr[0] > arr[1]){
+            max1=arr[0];
+            max2=arr[1];
+        }else{
+            max1=arr[1];
+            max2=arr[0];
+        }
 
-        for(int i=0; i<n; i++){
-            for(int j=1; j<n; j++){
-                if(arr[j] > arr[j-1]){
-                    temp = arr[j-1];
-                    arr[j-1] = arr[j];
-                    arr[j] = temp;
-                }
+        for(int i=2; i<n; i++){
+            if(arr[i] >= max1){
+                max2 = max1;
+                max1 = arr[i];
+            }else if(arr[i] > max2){
+                max2 = arr[i];
             }
         }
-        System.out.printf("%d %d", arr[0], arr[1]);
+
+        System.out.print(max1 + " " + max2);
 
     }
 }
