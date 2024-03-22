@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[]arr = new int[n];
-        int[]countArr = new int[1000];
+        int[]countArr = new int[1001];
         int result = -1;
 
         for(int i=0; i<n; i++){
@@ -17,7 +17,7 @@ public class Main {
             countArr[arr[i]] += 1;
         }
 
-        for(int i=0; i<countArr.length; i++){
+        for(int i=1; i<countArr.length; i++){
             if(countArr[i] == 1){
                 result = i;
             }
