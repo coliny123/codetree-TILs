@@ -8,11 +8,11 @@ public class Main {
         int len = str.length();
 
         char before = str.charAt(0);
-        int cnt = 1;
+        int cnt = 0;
         StringBuilder sb = new StringBuilder();
 
 
-        for(int i=1; i<len; i++){
+        for(int i=0; i<len; i++){
             if(str.charAt(i) == before){
                 cnt++;
             }else{
