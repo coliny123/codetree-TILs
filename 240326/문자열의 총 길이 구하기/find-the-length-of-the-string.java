@@ -11,9 +11,8 @@ public class Main {
         }
         int cnt = 0;
         for(int i=0; i<10; i++){
-            for(int j=0; j<arr[i].length(); j++){
-                cnt++;
-            }
+            int len = arr[i].length();
+            cnt += len;
         }
 
         System.out.println(cnt);
