@@ -8,7 +8,7 @@ public class Main {
         while(s.length() > 1){
             int n = sc.nextInt();
             int len = s.length();
-            if(n > len){
+            if(n >= len){
                 s = s.substring(0,len-1);
             }else if(n==0){
                 s = s.substring(1,len);
