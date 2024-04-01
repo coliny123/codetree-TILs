@@ -20,9 +20,10 @@ public class Main {
                 dirNum = (dirNum - 1 + 4) % 4;
             else if(arr[i] == 'R')
                 dirNum = (dirNum + 1) % 4;
-            else
+            else{
                 nx = x + dx[dirNum];
                 ny = y + dy[dirNum];
+            }
         }
         System.out.println(nx + " " + ny);
 
