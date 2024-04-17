@@ -7,23 +7,23 @@ public class Main {
         int N = sc.nextInt();
         int M = sc.nextInt();
         int K = sc.nextInt();
-        int arr[] = new int[N+1];
-
-        int answer = -1;
+        int penalizedPerson[] = new int[M];
+        int penaltyNum[] = new int[N+1];
 
         for(int i=0; i<M; i++){
-            int a = sc.nextInt();
-            arr[a]++;
-            for(int j=1; j<N+1; j++){
-                if(arr[j] == K){
-                    answer = j;
-                    break;
-                }
-            }
-            if(answer != -1){
+            penalizedPerson[i] = sc.nextInt();
+        }
+        int answer = -1;
+        for(int i=0; i<M; i++){
+            int target = penalizedPerson[i];
+            penaltyNum[target]++;
+
+            if(penaltyNum[target] >= K){
+                answer = target;
                 break;
             }
         }
+
         
         System.out.println(answer);
     }
