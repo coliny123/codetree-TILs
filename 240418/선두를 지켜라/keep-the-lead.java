@@ -9,22 +9,22 @@ public class Main {
         int A[] = new int[1000001];
         int B[] = new int[1000001];
 
-        int time=0;
+        int time=1;
         for(int i=0; i<n; i++){
             int v = sc.nextInt();
             int t = sc.nextInt();
             while(t-- > 0){
-                A[time] += v;
+                A[time] = A[time-1] + v;
                 time++;
             }
 
         }
-        time=0;
+        time=1;
         for(int i=0; i<m; i++){
             int v = sc.nextInt();
             int t = sc.nextInt();
             while(t-- > 0){
-                B[time] += v;
+                B[time] = B[time-1] + v;
                 time++;
             }
         }
