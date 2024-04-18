@@ -24,13 +24,16 @@ public class Main {
             int v = sc.nextInt();
             int t = sc.nextInt();
             while(t-- > 0){
-                A[timeB] = A[timeB - 1] + v;
+                B[timeB] = B[timeB - 1] + v;
                 timeB++;
             }
         }
+        int max = Math.max(timeA, timeB);
+
+
 
         int sundo = 0, answer = 0;
-        for(int i = 1; i <=timeA; i++) {
+        for(int i = 1; i <max; i++) {
             if(A[i] > B[i]) {
                 if(sundo != 1)
                     answer++;
@@ -40,6 +43,12 @@ public class Main {
                 if(sundo != 2)
                     answer++;
                 sundo = 2; 
+            }
+            else{
+                if(sundo != 0){
+                    answer++;
+                }
+                sundo = 0;
             }
         }
 
