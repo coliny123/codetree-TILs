@@ -35,11 +35,9 @@ public class Main {
         c -= 1;
 
         for(int i=0; i<t; i++){
-            int nx = r + dx[dir];
-            int ny = r + dy[dir];
-            if(inRange(nx,ny,n)){
-                r = nx;
-                c = ny;
+            if(inRange(r + dx[dir],c + dy[dir],n)){
+                r = r + dx[dir];
+                c = c + dy[dir];
             }else{
                 dir = 3 - dir;
             }
