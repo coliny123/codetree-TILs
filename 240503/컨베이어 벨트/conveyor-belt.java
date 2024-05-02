@@ -10,38 +10,33 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int t = Integer.parseInt(st.nextToken());
 
-        int u[] = new int[n];
-        int d[] = new int[n];
+        int totalLen = 2*n;
+
+        int arr[] = new int[totalLen];
 
         st = new StringTokenizer(br.readLine());
         for(int i=0; i<n; i++){
-            u[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
         st = new StringTokenizer(br.readLine());
-        for(int i=0; i<n; i++){
-            d[i] = Integer.parseInt(st.nextToken());
+        for(int i=n; i<totalLen; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        for(int i=0; i<t; i++){
-            int temp = u[n-1];
-            for(int col=n-1; col>0; col--){
-                u[col] = u[col-1];
+        while(t-- >0){
+            int temp = arr[totalLen-1];
+            for(int i=totalLen-1; i>0; i--){
+                arr[i] = arr[i-1];
             }
-            u[0] = d[n-1];
-
-            for(int col=n-1; col>0; col--){
-                d[col] = d[col-1];
-            }
-            d[0] = temp;
+            arr[0] = temp;
         }
 
-
         for(int i=0; i<n; i++){
-            System.out.print(u[i] + " ");
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
-        for(int i=0; i<n; i++){
-            System.out.print(d[i] + " ");
+        for(int i=n; i<n*2; i++){
+            System.out.print(arr[i] + " ");
         }
 
 
