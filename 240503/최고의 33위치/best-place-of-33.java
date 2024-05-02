@@ -13,15 +13,16 @@ public class Main {
                 arr2d[i][j] = sc.nextInt();
             }
         }
-        int max = Integer.MIN_VALUE;
-        for(int i=0; i<N-2; i++){
-            for(int j=0; j<N-2; j++){
+        int max = 0;
+        for(int row=0; row<N; row++){
+            for(int col=0; col<N; col++){
+                if(row +2 >= N || col + 2 >= N){
+                    continue;
+                }
                 int cnt = 0;
-                for(int k=i; k<i+3; k++){
-                    for(int q=i; q<i+3; q++){
-                        if(arr2d[k][q] == 1){
-                            cnt++;
-                        }
+                for(int i= row; i<=row+2; i++){
+                    for(int j=col; j<=col+2; j++){
+                        cnt += arr2d[i][j];
                     }
                 }
                 max = Math.max(max, cnt);
