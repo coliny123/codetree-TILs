@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static int n;
     public static int arr[][];
-    public static int dx[] = new int[]{0, 0, -1, 1};
+    public static int dx[] = new int[]{0, 0, 1, -1};
     public static int dy[] = new int[]{1, -1, 0, 0};
 
     public static boolean inRange(int x, int y){
@@ -54,6 +54,7 @@ public class Main {
             if(beforeMax == max){
                 break;
             }
+            beforeMax = max;
             System.out.print(max + " ");
         }
     }
