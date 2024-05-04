@@ -1,5 +1,15 @@
 import java.util.*;
 
+
+class Pair { 
+    int x, y;
+    public Pair(int x, int y) { 
+        this.x = x; 
+        this.y = y; 
+    } 
+}
+
+
 public class Main {
     public static int n;
     public static int m;
@@ -18,20 +28,17 @@ public class Main {
 
 
     public static void move(int row, int col){
-        int max = arr[row][col];
-        int max_X = row;
-        int max_Y = col;
-        count[row][col]--;
+        int max = 0;
+        Pair maxPos = new Pair(-1, -1);
         for(int i=0; i<4; i++){
             int nx = row + dx[i];
             int ny = col + dy[i];
             if(inRange(nx, ny) && arr[nx][ny] > max){
                 max = arr[nx][ny];
-                max_X = nx;
-                max_Y = ny;
+                maxPos = new Pair(nx, ny);
             }
         }
-        newCount[max_X][max_Y]++;
+        newCount[maxPos.x][maxPos.y] += 1;
     }
 
     public static void moveAll(){
