@@ -23,7 +23,7 @@ public class Main {
         // 첫 번째 값을 넣는 순간 이거나
         // 이전 값이 0이 아닌 경우(1인 경우)
         for(int i=1; i<=k; i++){
-            if(curNum >=3 && answer.get(curNum-3) == answer.get(curNum-1) && answer.get(curNum-2) == answer.get(curNum-1)){
+            if(curNum >=3 && answer.get(answer.size()-2) == i && answer.get(answer.size()-1) == i){
                 continue;
             }
             answer.add(i);
