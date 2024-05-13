@@ -19,6 +19,10 @@ public class Main {
         for(int row=0; row<n; row++){
             int cnt=1;
             int now=grid[row][0];
+            if(n==1){
+                answer++;
+                break;
+            }
             for(int col=1; col<n; col++){
                 if(now == grid[row][col]){
                     cnt++;
@@ -36,6 +40,10 @@ public class Main {
         for(int col=0; col<n; col++){
             int cnt=1;
             int now=grid[0][col];
+            if(n==1){
+                answer++;
+                break;
+            }
             for(int row=1; row<n; row++){
                 if(now == grid[row][col]){
                     cnt++;
