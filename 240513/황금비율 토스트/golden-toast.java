@@ -34,7 +34,6 @@ public class Main {
                 }
             }
         }
-        System.out.println();
         it = l.listIterator();
         while(it.hasNext()) {               // 'd' 'b' 'c'
             System.out.print(it.next());    // 원소 값을 출력하며 한 칸 뒤로 이동합니다.
