@@ -4,7 +4,7 @@ public class Main {
     public static int n;
     public static int t;
 
-    public static int dx[] = new int[]{0, -1, 0, 1};
+    public static int dx[] = new int[]{0, 1, 0, -1};
     public static int dy[] = new int[]{1, 0, -1, 0};
 
     public static boolean inRange(int x, int y) {
@@ -40,6 +40,7 @@ public class Main {
             }else{
                 dir = (dir + 2) % 4;
             }
+
         }
         System.out.println((r+1) + " " + (c+1));
         
