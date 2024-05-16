@@ -18,12 +18,12 @@ public class Main {
         int x = 0;
         int y = 0;
         int cnt = 0;
-        for(int row=1; row<r-1; row++){
-            for(int col=1; col<c-1; col++){
+        for(int row=1; row<r-2; row++){
+            for(int col=1; col<c-2; col++){
                 if(grid[row][col] != grid[x][y]){
                     for(int row2=row+1; row2<r-1; row2++){
                         for(int col2=col+1; col2<c-1; col2++){
-                            if(grid[row2][col2] != grid[row][col]){
+                            if(grid[row2][col2] != grid[row][col] && grid[row2][col2] != grid[r-1][c-1]){
                                 cnt++;
                             }
                         }
