@@ -6,6 +6,7 @@ public class Main {
     public static int n;
     public static int m;
     public static int max = Integer.MIN_VALUE;
+    public static int min = Integer.MAX_VALUE;
     public static int cnt;
     public static int graph[][];
     public static int answer[];
@@ -75,12 +76,13 @@ public class Main {
                 int a = sc.nextInt();
                 graph[i][j] = a;
                 max = Math.max(max, a);
+                min = Math.min(min, a);
             }
         }
 
         answer = new int[max+1];
 
-        for(int k=1; k<=max; k++){
+        for(int k=min; k<=max; k++){
             for(int i=0; i<n; i++){
                 for(int j=0; j<m; j++){
                     if(canGo(i, j, k)){
@@ -94,6 +96,10 @@ public class Main {
             vilage.clear();
             // System.out.println(k);
             // print();
+            // for(int i=0; i<answer.length; i++){
+            //     System.out.print(answer[i] + " ");
+            // }
+            // System.out.println();
             reset();
         }
 
@@ -101,7 +107,7 @@ public class Main {
         int idx = 1;
         for(int k=2; k<=max; k++){
             if(answer[k] > maxVilage){
-                maxVilage = k;
+                maxVilage = answer[k];
                 idx = k;
             }
         }
