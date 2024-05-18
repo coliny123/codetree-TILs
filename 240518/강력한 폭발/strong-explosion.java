@@ -67,7 +67,7 @@ public class Main {
 
 
     public static void BT(int idx){
-        if(idx == n+1){
+        if(idx == bombPos.size()+1){
             max = Math.max(max, findMax());
             return;
         }
