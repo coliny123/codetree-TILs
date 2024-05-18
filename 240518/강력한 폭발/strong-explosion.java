@@ -11,7 +11,6 @@ class Pair{
 public class Main {
     public static int n;
     public static int max=Integer.MIN_VALUE;
-    public static int bomb[][];
     public static boolean bombed[][];
     public static ArrayList<Integer> answer = new ArrayList<>();
     public static ArrayList<Pair> bombPos = new ArrayList<>();
@@ -84,7 +83,6 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
-        bomb = new int[n][n];
         bombed = new boolean[n][n];
 
         for(int i=0; i<n; i++){
@@ -93,7 +91,6 @@ public class Main {
                 if(a == 1){
                     bombPos.add(new Pair(i, j));
                 }
-                bomb[i][j] = a;
             }
         }
 
