@@ -82,7 +82,7 @@ public class Main {
 
         answer = new int[max+1];
 
-        for(int k=min; k<=max; k++){
+        for(int k=1; k<=max; k++){
             for(int i=0; i<n; i++){
                 for(int j=0; j<m; j++){
                     if(canGo(i, j, k)){
