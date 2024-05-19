@@ -7,6 +7,11 @@ public class Main {
         String a = sc.next();
         char str[] = a.toCharArray();
 
+        if(str.length == 1){
+            System.out.println(0);
+            return;
+        }
+
         for(int i=0; i<str.length; i++){
             if(str[i] == '0'){
                 str[i] = '1';
