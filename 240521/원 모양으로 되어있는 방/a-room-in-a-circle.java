@@ -6,27 +6,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int arr[] = new int[n+1];
+        int arr[] = new int[n];
 
-        for(int i=1; i<=n; i++){
+        for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
 
-        int minWalk = Integer.MAX_VALUE;
-        for(int i=1; i<=n; i++){
-            int distance = 0;
-            int walk=0;
-            for(int j=i; j<n+i; j++){
-                int idx = j%n;
-                if(idx == 0){
-                    idx++;
-                }
-                walk += arr[idx]*distance;
-                distance++;
+        int ans = Integer.MAX_VALUE;
+        for(int i = 0; i < n; i++) {
+            int sumDist = 0;
+            for(int j = 0; j < n; j++) {
+                int dist = (j + n - i) % n;
+                sumDist += dist * arr[j];
             }
-            minWalk = Math.min(minWalk, walk);
+            ans = Math.min(ans, sumDist);
         }
 
-        System.out.println(minWalk);
+        System.out.println(ans);
     }
 }
