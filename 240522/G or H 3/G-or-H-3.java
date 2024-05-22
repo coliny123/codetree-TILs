@@ -11,7 +11,6 @@ public class Main {
         int k = sc.nextInt();
 
 
-        int max = Integer.MIN_VALUE;
         for(int i=0; i<n; i++){
             int idx = sc.nextInt();
             char a = sc.next().charAt(0);
@@ -21,11 +20,10 @@ public class Main {
             else   
                 arr[idx] = 2;
 
-            max = Math.max(max, idx);
         }
 
         int maxSum=0;
-        for(int i=1; i<=max-k; i++){
+        for(int i=1; i<=10000-k; i++){
             int sum=0;
             for(int j=i; j<=i+k; j++){
                 sum += arr[j];
