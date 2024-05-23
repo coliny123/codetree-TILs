@@ -20,7 +20,7 @@ public class Main {
         }
 
         for(int i=1; i<n; i++){
-            dp[0][i] = dp[0][i] +graph[0][i];
+            dp[0][i] = dp[0][i-1] +graph[0][i];
         }
 
         for(int i=1; i<n; i++){
