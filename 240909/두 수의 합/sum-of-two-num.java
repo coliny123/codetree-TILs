@@ -9,15 +9,18 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
 
+        sc.nextLine();
+        String input[] = sc.nextLine().split(" ");
         for(int i=0; i<n; i++){
-            hm.put(sc.nextInt(), 1);
+            int a = Integer.valueOf(input[i]);
+            hm.put(a, hm.getOrDefault(a, 0) + 1);
         }
 
         int ans=0;
         for(int key:hm.keySet()){
             int diff = k - key;
             if(hm.containsKey(diff)){
-                ans++;
+                ans += hm.get(diff);
             }
         }
 
