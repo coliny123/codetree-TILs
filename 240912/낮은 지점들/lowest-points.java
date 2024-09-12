@@ -12,17 +12,13 @@ public class Main {
             int x = sc.nextInt();
             int y = sc.nextInt();
 
-            
+            int value = Math.min(y, map.getOrDefault(x, Integer.MAX_VALUE));
 
-            if(map.containsKey(x)){
-                int value = Math.min(y, map.get(x));
-                map.put(x, value);
-            }else{
-                map.put(x, y);
-            }
+            map.put(x, value);
+
         }
 
-        int sum=0;
+        long sum=0;
         for(int key:map.keySet()){
             sum += map.get(key);
         }
