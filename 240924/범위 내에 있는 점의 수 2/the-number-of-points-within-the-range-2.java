@@ -7,20 +7,17 @@ public class Main {
         int N = sc.nextInt();
         int Q = sc.nextInt();
 
-        // int sum[] = new int[1000001];
-        int num[] = new int[11];
-        int sum[] = new int[11];
+        int num[] = new int[1000001];
+        int sum[] = new int[1000001];
 
         for(int i=0; i<N; i++){
             num[sc.nextInt()] = 1;
-            // sum[sc.nextInt()] = 1;
         }
 
 
 
         for(int i=1; i<sum.length; i++){
             sum[i] = sum[i-1] + num[i];
-            // System.out.println(sum[i]);
         }
 
         while(Q-- > 0){
