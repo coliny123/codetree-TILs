@@ -19,8 +19,8 @@ public class Main {
         HashMap<Integer, Integer> map = new HashMap<>();
         TreeSet<Integer> nums = new TreeSet<>();
 
-        int arr[] = new int[n+1];
-        Pair queries[] = new Pair[n+1];
+        int arr[] = new int[100000];
+        Pair queries[] = new Pair[100000];
 
 
         for(int i=0; i<n; i++){
