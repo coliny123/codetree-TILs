@@ -8,31 +8,53 @@ public class Main {
         int N = sc.nextInt();
         int M = sc.nextInt();
 
-        TreeSet<Integer> set = new TreeSet<>();
+        int[] nums = new int[N];
         for(int i=0; i<N; i++){
-            set.add(sc.nextInt());
+            nums[i] = sc.nextInt();
         }
-        set.add(1000000001);
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int cnt=1;
-        for(int num : set){
-            map.put(num, cnt);
-            cnt++;
-        }
-        // int st = 1;
-        // int ed = 5;
-        // System.out.println(set.ceiling(st) + " " + set.higher(ed));
+        Arrays.sort(nums);
 
         while(M-- > 0){
             int st = sc.nextInt();
             int ed = sc.nextInt();
 
-            int newA = map.get(set.ceiling(st));
-            int newB = map.get(set.higher(ed));
+            int lower = getLowerBound(nums, 0, nums.length, st);
+            int upper = getUpperBound(nums, 0, nums.length, ed);
 
-            System.out.println(newB - newA);
+            System.out.println(upper - lower);
+
         }
-        
+    }
+
+    public static int getLowerBound(int[] arr, int st, int ed, int t){
+        int answer=ed--;
+        while(st <= ed){
+            int mid = (st+ed)/2;
+
+            if(arr[mid] < t){
+                st = mid+1;
+            }else{
+                ed = mid-1;
+                answer = Math.min(answer, mid);
+            }
+        }
+        return answer;
+    }
+
+    public static int getUpperBound(int[] arr, int st, int ed, int t){
+        int answer=ed--;
+        while(st <= ed){
+            int mid = (st+ed)/2;
+
+            if(arr[mid] <= t){
+                st = mid+1;
+            }else{
+                ed = mid-1;
+                answer = Math.min(answer, mid);
+            }
+        }
+
+        return answer;
     }
 }
