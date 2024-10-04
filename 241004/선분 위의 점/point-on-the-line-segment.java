@@ -1,19 +1,5 @@
 import java.util.*;
 
-// class Node implements Comparable<Node>{
-//     int cnt, value;
-    
-//     public Node(int cnt, int value){
-//         this.cnt=cnt;
-//         this.value=value; 
-//     }
-
-//     @Overrdie
-//     public int compareTo(Node x){
-        
-//     }
-// }
-
 public class Main {
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
@@ -28,7 +14,7 @@ public class Main {
         }
         set.add(1000000001);
 
-        TreeMap<Integer, Integer> map = new TreeMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         int cnt=1;
         for(int num : set){
             map.put(num, cnt);
