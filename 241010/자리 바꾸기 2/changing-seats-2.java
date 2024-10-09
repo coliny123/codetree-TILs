@@ -24,9 +24,9 @@ public class Main {
             commends[1][i] = b;
         }
 
-        for(int k=0; k<3*K; k++){
-            int a = commends[0][k%K];
-            int b = commends[1][k%K];
+        for(int i=0; i<3*K; i++){
+            int a = commends[0][i%K];
+            int b = commends[1][i%K];
 
             history[chairs[a]].add(b);
             history[chairs[b]].add(a);
@@ -36,8 +36,8 @@ public class Main {
             chairs[b] = tmp;
         }
 
-        for(int i=0; i<N; i++){
-            System.out.println(history[i].size());
+        for(HashSet set : history){
+            System.out.println(set.size());
         }
     }
 }
