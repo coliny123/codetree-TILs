@@ -45,8 +45,8 @@ public class Main {
                 }else{
                     seqCnt = 1;
                 }
+                maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
             }
-            maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
             if(maxSeqCnt >= m)
                 answer++;
         }
@@ -60,8 +60,8 @@ public class Main {
                 else{
                     seqCnt = 1;
                 }
+                maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
             }
-            maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
             if(maxSeqCnt >= m)
                 answer++;
         }
