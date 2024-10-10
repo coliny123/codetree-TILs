@@ -41,6 +41,8 @@ public class Main {
             for(int j=1; j<n; j++){
                 if(grid[i][j-1]==grid[i][j]){
                     seqCnt++;
+                }else{
+                    seqCnt = 1;
                 }
             }
             if(seqCnt >= m)
@@ -52,6 +54,9 @@ public class Main {
             for(int j=1; j<n; j++){
                 if(grid[j-1][i] == grid[j][i])
                     seqCnt++;
+                else{
+                    seqCnt = 1;
+                }
             }
             if(seqCnt >= m)
                 answer++;
