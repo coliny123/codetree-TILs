@@ -37,6 +37,7 @@ public class Main {
                 grid[i][j] = sc.nextInt();
 
         for(int i=0; i<n; i++){
+            int maxSeqCnt = 1;
             int seqCnt=1;
             for(int j=1; j<n; j++){
                 if(grid[i][j-1]==grid[i][j]){
@@ -45,11 +46,13 @@ public class Main {
                     seqCnt = 1;
                 }
             }
-            if(seqCnt >= m)
+            maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
+            if(maxSeqCnt >= m)
                 answer++;
         }
 
         for(int i=0; i<n; i++){
+            int maxSeqCnt = 1;
             int seqCnt=1;
             for(int j=1; j<n; j++){
                 if(grid[j-1][i] == grid[j][i])
@@ -58,7 +61,8 @@ public class Main {
                     seqCnt = 1;
                 }
             }
-            if(seqCnt >= m)
+            maxSeqCnt = Math.max(maxSeqCnt, seqCnt);
+            if(maxSeqCnt >= m)
                 answer++;
         }
 
